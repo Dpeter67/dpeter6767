@@ -1,0 +1,12 @@
+DATA smo_stroke;
+INPUT exposed $ disease $ patients ;
+DATALINES ;
+exposed disease 50
+exposed none    50
+not_exp disease 25
+not_exp none    75 
+;
+PROC FREQ DATA = smo_stroke ;
+TABLES exposed*disease / RELRISK RISKDIFF ;
+Blood pressure  patients ;
+RUN ;
